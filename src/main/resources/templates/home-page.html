@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:align-items="http://www.w3.org/1999/xhtml"
-      xmlns:justify-content="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
 <head>
     <meta charset="UTF-8">
     <title>Thymeleaf Hello World Example</title>
@@ -34,7 +33,7 @@
 <section>
     <table border="1"  id = "Races">
         <tr>
-            <th>Id</th>
+            <th style="visibility:hidden">Id</th>
             <th>Начальная</th>
             <th>Конечная</th>
             <th>Время отправления</th>
@@ -57,11 +56,10 @@
                 <a th:href="@{/race/{id}(id = ${race.id})}">Показать остановки</a>
             </td>
         </tr>
-        <td colspan="8">
-        </td>
+
     </table>
     <form th:action="@{/admin/}">
-        <button type="submit"  id="btnadmin" >Админ </button> </td>
+        <button type="submit"  id="btnadmin" >Админ </button>
     </form>
 </section>
 </div>
