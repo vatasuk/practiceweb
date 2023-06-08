@@ -5,25 +5,19 @@
 
     <table border="1" id = "stops">
       <tr>
-          <th>Id</th>
-          <th> Маршрут</th>
           <th>Остановка</th>
           <th>Время отбытия</th>
           <th>Время прибытия</th>
           <th>Цена</th>
           <th>Доступно мест</th>
-          <th>Действия</th>
+
       </tr>
       <tr th:each="stop: ${stops}">
-          <td th:text="${stop.getId}"></td>
-          <td th:value="${stop.race_id}" th:text="${stop.race_id}"></td>
         <td th:text="${stop.getStop_place}"></td>
         <td th:text="${stop.dep_time}"></td>
         <td th:text="${stop.arr_time}"></td>
         <td th:text="${stop.cost_pr_stop}"></td>
         <td th:text="${stop.av_places}"></td>
-        <td>
-        </td>
       </tr>
     </table>
     <form th:action="@{/getbilet/}" th:object="${selected}" method="get">

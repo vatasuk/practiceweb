@@ -7,14 +7,14 @@
 </head>
 <body>
 <div align="center">
-  <h1>Edit Sale</h1>
+  <h1>Создание новой остановки</h1>
   <br />
   <form action="#" th:action="@{/savestop}" th:object="${stop}"
         method="post">
 
     <table border="0" cellpadding="10">
 
-        <td>Race id</td>
+        <td>Номер маршрута</td>
         <td><input type="text" th:field="*{race_id}" /></td>
       </tr>
       <tr>
@@ -43,7 +43,7 @@
       </tr>
 
       <tr>
-        <td colspan="2"><button type="submit">Save</button> </td>
+        <td colspan="2"><button type="submit">Сохранить</button> </td>
       </tr>
     </table>
   </form>

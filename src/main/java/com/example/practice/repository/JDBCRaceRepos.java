@@ -82,5 +82,6 @@ public class JDBCRaceRepos {
     public void deleteRace(int id) {
 
         jdbcTemplate.update("DELETE FROM race WHERE id = ?", id);
+        jdbcTemplate.update("delete from stop where race_id = ?", id);
     }
 }
