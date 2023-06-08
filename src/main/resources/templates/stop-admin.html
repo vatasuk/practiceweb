@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+
+  <table border="1" id = "stops">
+    <tr>
+      <th>Id</th>
+      <th> Маршрут</th>
+      <th>Остановка</th>
+      <th>Время отбытия</th>
+      <th>Время прибытия</th>
+      <th>Цена</th>
+      <th>Доступно мест</th>
+      <th>Действия</th>
+    </tr>
+    <tr th:each="stop: ${stops}">
+      <td th:text="${stop.getId}"></td>
+      <td th:value="${stop.race_id}" th:text="${stop.race_id}"></td>
+      <td th:text="${stop.getStop_place}"></td>
+      <td th:text="${stop.dep_time}"></td>
+      <td th:text="${stop.arr_time}"></td>
+      <td th:text="${stop.cost_pr_stop}"></td>
+      <td th:text="${stop.av_places}"></td>
+      <td>
+        <a th:href="@{/stedit/{id}(id = ${stop.id})}">Редактировать</a>
+        <a th:href="@{/deletestop/{id}(id = ${stop.id})}">Удалить</a>
+      </td>
+    </tr>
+  </table>
+  <section align="right">
+    <a href="/newstop">Создать новую остановку</a>
+  </section>
+</head>
+</html>

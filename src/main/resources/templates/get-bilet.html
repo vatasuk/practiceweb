@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form th:object="${stop}" method="post">
+
+
+    <table border="0" cellpadding="10">
+        <tr>
+            <td>Пункт прибытия:</td>
+            <td type="text" th:each="arr : ${arrs}" th:text="${arr}"> </td>
+        </tr>
+        <tr>
+            <td>Пункт отправления:</td>
+            <td type="text" th:each="dep : ${deps}" th:text="${dep}">  </td>
+        </tr>
+        <tr>
+            <td>Время отправления: </td>
+            <td  th:each="dept : ${deptm}" th:text="${dept}">> </td>
+        </tr>
+        <tr>
+            <td>Время прибытия: </td>
+            <td  th:each="arrt : ${arrtm}" th:text="${arrt}">> </td>
+        </tr>
+        <tr>
+            <td>Место: </td>
+            <td  th:each="pl : ${place}" th:text="${pl}">> </td>
+        </tr>
+        <tr>
+            <td>Цена: </td>
+            <td  th:each="price : ${pr}" th:text="${price}">> </td>
+        </tr>
+
+
+    </table>
+    </form>
+</body>
+</html>

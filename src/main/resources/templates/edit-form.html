@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8" />
+  <title>Edit Sale</title>
+</head>
+<body>
+<div align="center">
+  <h1>Edit Sale</h1>
+  <br />
+  <form action="#" th:action="@{/update}" th:object="${race}"
+        method="post">
+
+    <table border="0" cellpadding="10">
+      <tr>
+        <td>ID:</td>
+        <td><input type="text" th:field="*{id}" readonly="readonly" /></td>
+      </tr>
+      <tr>
+        <td>Начальная:</td>
+        <td><input type="text" th:field="*{departure_place}" /></td>
+      </tr>
+      <tr>
+        <td>Конечная:</td>
+        <td><input type="text" th:field="*{arrival_place}" /></td>
+      </tr>
+      <tr>
+        <td>Время отправления:</td>
+        <td><input type="text" th:field="*{time_departure}" /></td>
+      </tr>
+      <tr>
+        <td>Время прибытия:</td>
+        <td><input type="text" th:field="*{time_arrival}" /></td>
+      </tr>
+      <tr>
+        <td>Время:</td>
+        <td><input type="text" th:field="*{time}" /></td>
+      </tr>
+      <tr>
+      <td>Цена:</td>
+      <td><input type="text" th:field="*{all_cost}" /></td>
+    </tr>
+      <tr>
+        <td>Кол-во мест:</td>
+        <td><input type="text" th:field="*{places}" /></td>
+      </tr>
+      <tr>
+        <td colspan="2"><button type="submit">Save</button> </td>
+      </tr>
+    </table>
+  </form>
+</div>
+</body>

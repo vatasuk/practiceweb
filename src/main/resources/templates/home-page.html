@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:align-items="http://www.w3.org/1999/xhtml"
+      xmlns:justify-content="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf Hello World Example</title>
+</head>
+<body >
+<div align="center">
+<h1 th:text="${message}">Hello Good Morning!.</h1>
+    <form action="#" th:action="@{/hp}">
+        <table border="0" cellpadding="10">
+            <tr>
+                <td>Начальная:</td>
+                <td><input type="text" name="departure_place" id="departure_place" th:value="${departure_place}" /></td>
+            </tr>
+            <tr>
+                <td>Конечная:</td>
+                <td><input type="text" name="arrival_place" id="arrival_place" th:value="${arrival_place}" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit" value="search">Поиск</button> &nbsp;
+                    <button type="button" value="Clear" id="btnClear" onclick="clearSearch()">Очистить </button> </td>
+
+            </tr>
+
+        </table>
+    </form>
+    <script type="text/javascript">
+    function clearSearch() {
+        window.location = "[[@{/hp}]]";
+    }
+</script>
+<section>
+    <table border="1"  id = "Races">
+        <tr>
+            <th>Id</th>
+            <th>Начальная</th>
+            <th>Конечная</th>
+            <th>Время отправления</th>
+            <th>Время прибытия</th>
+            <th>Время</th>
+            <th>Цена</th>
+            <th>Всего мест</th>
+            <th>Действия</th>
+        </tr>
+        <tr th:each="race: ${races}">
+            <td style="visibility:hidden" th:text="${race.id}"></td>
+            <td th:text="${race.getDeparture_place}"></td>
+            <td th:text="${race.arrival_place}"></td>
+            <td th:text="${race.time_departure}"></td>
+            <td th:text="${race.time_arrival}"></td>
+            <td th:text="${race.time}"></td>
+            <td th:text="${race.all_cost}"></td>
+            <td th:text="${race.places}"></td>
+            <td>
+                <a th:href="@{/race/{id}(id = ${race.id})}">Показать остановки</a>
+            </td>
+        </tr>
+        <td colspan="8">
+        </td>
+    </table>
+    <form th:action="@{/admin/}">
+        <button type="submit"  id="btnadmin" >Админ </button> </td>
+    </form>
+</section>
+</div>
+</body>
+</html>
